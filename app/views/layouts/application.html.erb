@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hotel</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= link_to 'Home', root_path %> |
+  	<%= link_to 'Rooms', rooms_path %> |
+  	<%= link_to 'About', about_path %> |
+    <% if current_admin %>
+      <%= link_to 'Messages', authenticated_root_path %> |
+      <%= link_to 'Rooms Admin', authenticated_rooms_path %> 
+    <% else %>
+      <%= link_to 'Contact', contact_path %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<%= form_for :room, :url => {:action => "submit"} do %>
+	<%= label_tag(:title, "Title:") %>
+	<%= text_field_tag(:title) %> <br>
+	<%= label_tag(:description, "Description:") %>
+	<%= text_field_tag(:description) %> <br>
+	<%= label_tag(:price_per_night, "Price_per_night:") %>
+	<%= text_field_tag(:price_per_night) %> <br>
+	<%= label_tag(:url, "Image URL:") %>
+	<%= text_field_tag(:url) %> <br>
+	<%= submit_tag("Submit") %>
+<% end %>
+
+<br>

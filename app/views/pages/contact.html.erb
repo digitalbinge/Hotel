@@ -1,0 +1,13 @@
+<%= form_for :enquiry, :url => {:action => "submit"} do %>
+	<%= label_tag(:name, "Name:") %>
+	<%= text_field_tag(:name) %> <br>
+	<%= label_tag(:email, "Email:") %>
+	<%= text_field_tag(:email) %> <br>
+	<%= label_tag(:phone, "Phone:") %>
+	<%= text_field_tag(:phone) %> <br>
+	<%= label_tag(:message, "Message:") %>
+	<%= text_field_tag(:message) %> <br>
+	<%= label_tag(:room, "Room:") %>
+	<%= select_tag :room_id, options_for_select(@room_options), {prompt: "Select a room"} %> <br>
+	<%= submit_tag("Submit") %>
+<% end %>
